@@ -1,0 +1,52 @@
+html {
+    background-color: black;
+}
+
+h6 {
+    display: inline;
+    font-size: x-large;
+    font-family: monospace;
+}
+
+a,
+.body-text {
+    color: #ccc
+}
+
+a:hover,
+.bi:hover {
+    color: cyan;
+}
+
+.fork-div {
+    text-align: center;
+    font-size: x-large;
+}
+
+.video {
+    display: block;
+    width: max-content;
+    margin-bottom: 20px;
+}
+
+.controls {
+    background-color: #00bcd4;
+    color: black;
+    width: 100%;
+    font-size: larger;
+}
+
+.bi-fullscreen {
+    position: relative;
+    left: 260px;
+    font-size: smaller;
+}
+
+.bi {
+    color: #ccc;
+}
+
+.w3-code {
+    border: #00bcd4 solid 7px;
+    background-color: #ccc;
+}

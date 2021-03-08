@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Video element</title>
+</head>
+
+<body>
+    <div class="w3-container body-text w3-bottombar w3-topbar w3-border-cyan">
+        <h2>This is a standard video element with a controls attribute. It's looks can vary from browser to browser.
+        </h2>
+        <video src="./example.mp4" controls></video>
+    </div>
+    <div class="w3-container body-text w3-bottombar w3-topbar w3-border-cyan">
+        <h2>Lets add some icons to it and remove the autoplay attribute</h2>
+        <div class="video w3-container">
+            <video src="./example.mp4"></video>
+            <div class="controls w3-container">
+                <i class="bi bi-play"></i>
+                <i class="bi bi-pause"></i>
+                <i class="bi bi-fullscreen"></i>
+            </div>
+        </div>
+        <div class="w3-code htmlHigh notranslate">
+            &lt;div class="video w3-container"&gt;<br> &lt;video src="./example.mp4" class="myVideo"&gt;&lt;/video&gt;<br> &lt;div class="controls w3-container"&gt;<br> &lt;i class="bi bi-play"&gt;&lt;/i&gt;<br> &lt;i class="bi bi-pause"&gt;&lt;/i&gt;<br>            &lt;i class="bi bi-fullscreen"&gt;&lt;/i&gt;
+            <br> &lt;/div&gt;
+            <br> &lt;/div&gt;
+        </div>
+        <div class="w3-code cssHigh">
+            .video{<br> display: block;<br> width: max-content;<br>margin-bottom: 20px;<br> }
+            <br><br> .controls{
+
+            <br> background-color: #00bcd4;<br> color: black;<br> width: 100%;<br> font-size: larger;<br> }
+            <br><br> .bi-fullscreen{
+
+            <br> position: relative;<br> left: 260px; <br> font-size: smaller;<br> } <br><br> .bi{
+            <br> color: #ccc;<br> }
+        </div>
+    </div>
+    <div class="w3-container body-text w3-bottombar w3-topbar w3-border-cyan">
+
+        <h2>Now let's add some javascript (Jquey) to actuall make these icons work</h2>
+        <div class="video w3-container">
+            <video src="./example.mp4" class="myVideo"></video>
+            <div class="controls w3-container">
+                <i class="bi bi-play resumeBtn"></i>
+                <i class="bi bi-pause pauseBtn"></i>
+                <i class="bi bi-fullscreen fullscreenBtn"></i>
+            </div>
+        </div>
+        <div class="w3-code jsHigh">
+            const video = $('.myVideo');<br> const resumeBtn = $('.resumeBtn');<br> const pauseBtn = $('.pauseBtn');<br> const fullscreenBtn = $('.fullscreenBtn');<br> // .get(0) is only neccessary if you are using jquery, otherwise with normal document.querySelector
+            it wont be neccessary <br> video.on('click', () => { if (video.get(0).paused) { video.get(0).play() } else { video.get(0).pause() } });
+            <br> // play the video <br> resumeBtn.on('click', () => video.get(0).play());<br> // pause the video <br> pauseBtn.on('click', () => video.get(0).pause());<br> // enter fullscreen (via Fullscreen API: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API)
+            <br> fullscreenBtn.on('click', () => { video.get(0).requestFullscreen();});
+            <br>
+        </div>
+
+    </div>
+    <script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+    <script src="./video.js"></script>
+</body>
+
+</html>
